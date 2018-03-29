@@ -1,6 +1,14 @@
 import java.util.concurrent.ThreadLocalRandom;
 
 public final class MonteCarloSimulation {
+    /**
+     * Run a monte carlo simulation
+     *
+     * @param value Value being invested (for 1 year)
+     * @param mean Average return (in percent)
+     * @param sd Standard deviation (risk) (in percent)
+     * @return Simulated return for the year.
+     */
     public static double run(final double value, final double mean, final double sd) {
         double gaussian = ThreadLocalRandom.current().nextGaussian();
         gaussian = gaussian * sd + mean;
